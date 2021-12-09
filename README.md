@@ -1,0 +1,2 @@
+# ksc
+kubectl switch contexts
