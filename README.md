@@ -6,4 +6,4 @@ usage
 2. git clone or download source
 3. npm install
 4. run './ksc' 
-* use making symbolic link in bin folder, ex. /usr/bin/ksc -> {installed_dir}/ksc)
+* use making symbolic link in bin folder, ex. ln -s {installed_dir}/ksc /usr/bin/ksc
