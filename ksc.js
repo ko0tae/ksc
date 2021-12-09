@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+process.chdir(__dirname);
+
 var spawnSync = require('child_process').spawnSync;
 var inquirer = require('inquirer');
 
