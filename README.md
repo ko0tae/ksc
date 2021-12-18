@@ -1,12 +1,13 @@
 # ksc
-kubectl switch contexts
+## kubectl switch contexts
 
 Managing multiple k8s cluster, a ksc helps browsing and switching the k8s context on text UI.
 
 - kubectl config get-contexts
 - kubectl config use-context ...
 
-<Usage>
+## Usage
+  
 1. Install nodejs
 2. git clone or download the source
 3. Run 'npm install'
