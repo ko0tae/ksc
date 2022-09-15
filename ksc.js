@@ -22,6 +22,20 @@ var useContext  = function(name) {
   console.log(cmdrun.stderr.toString('utf-8'));
 }
 
+var delContext  = function(name) {
+  cmdrun = spawnSync('kubectl', [ 'config', 'delete-context', name ]);
+  console.log(cmdrun.stdout.toString('utf-8'));
+  console.log(cmdrun.stderr.toString('utf-8'));
+}
+
+let mode_argv = process.argv[2];
+let mode = "switch";
+
+if(mode_argv == "-d") {
+  console.log("### delete mode");
+  mode = "delete";
+}
+
 var out = getContexts();
 
 debug(out);
@@ -77,7 +91,11 @@ var questions = [
 
 inquirer.prompt(questions).then((answers) => {
   if(answers.context != eol_str) {
-    useContext(answers.context.substr(2));
+    if(mode == "delete") {
+      delContext(answers.context.substr(2));
+    } else {
+      useContext(answers.context.substr(2));
+    }
   }
 });
 
